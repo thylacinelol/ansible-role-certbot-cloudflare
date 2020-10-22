@@ -22,7 +22,6 @@ galaxy_info:
     - https
 
 dependencies:
-    - src: geerlingguy.pip
-      version: 1.2.2
-    - { role: geerlingguy.certbot, certbot_certs: [], version: 3.0.1 }
-      
+  - role: geerlingguy.pip
+  - { role: geerlingguy.certbot, certbot_certs: [], certbot_install_from_source: false } # needed for "certbot packages" command? thefuck...
+  - { role: geerlingguy.certbot, certbot_certs: [] } # install from source

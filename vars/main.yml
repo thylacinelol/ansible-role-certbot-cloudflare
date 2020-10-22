@@ -1,4 +1,9 @@
 ---
+pip_install_packages:
+  - name: acme
+    state: latest
+  - name: cloudflare
+    state: latest
 certbot_create_command: "certbot certonly --noninteractive --dns-cloudflare --agree-tos --email {{ cert_item.email | default(certbot_admin_email) }} -d {{ cert_item.domains | join(',') }}"
 certbot_create_method: standalone
 certbot_install_from_source: yes
